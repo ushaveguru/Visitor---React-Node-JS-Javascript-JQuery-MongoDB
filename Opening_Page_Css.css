@@ -1,0 +1,27 @@
+h1{
+    text-align: center;
+    font-size: 50px;
+    font-family: sans-serif;
+    color: crimson;
+}
+
+h3{
+    text-align: center;
+    font-size: 30px;
+    font-family: sans-serif;
+    color: gray;
+}
+
+#calimap{
+    display: inline;
+    position: absolute;
+    width: 400px;
+    height: 700px;
+}
+
+#loginbtn{
+    display: inline;
+    font-size: 15px;
+    float: right;
+    background-color: gainsboro;
+}
