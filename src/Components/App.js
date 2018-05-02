@@ -1,15 +1,39 @@
 import Header from './Header';
 import React from 'react';
+import axios from 'axios';
 import imageurl from '../img/mountains.jpeg';
 import natureurl from '../img/background.jpg';
+import ContestPreview from './ContestPreview';
+import { Link, NavLink, HashRouter, Route } from 'react-router-dom';
 
 
 
-const App=() =>{
+
+class App extends React.Component {
+
+state={
+    contests:[]
+};
+
+componentDidMount(){
+    axios.get('/api/contests')
+    .then(resp=>{
+        console.log(resp);
+        console.log(resp.data);
+        this.setState({
+        contests: resp.data.contests
+            });
+    })
+    .catch(console.error);
+    
+}
+
+
+    render(){
     const styleOne = 
           {
-            height:'100%',
-            width:'100%'
+            height:'10%',
+            width:'10%'
           };
     const styleTwo=
           {
@@ -92,36 +116,14 @@ const App=() =>{
     
     
     return(
+      
    <div className="App">
-        <Header />
-        <div style={styleOne}>
-            <nav className="navbar navbar-default navbar-fixed-top" role="navigation" style={styleTwo}>
-                <div className="container-fluid">
-                    <div className="navbar-header">
-                        <button type="button" className="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-main">
-                            <span className="sr-only">Toggle navigation</span>  
-                            <span className="icon-bar"></span>
-                            <span className="icon-bar"></span>
-                            <span className="icon-bar"></span>
-                        </button>
-                         <a className="navbar-brand" href="#"><img src={require('../img/small.png')} style={styleThree} /> 
-                        </a>
-                    </div>
-                    <div className="collapse navbar-collapse" id="navbar-collapse-main">
-                        <ul className="nav navbar-nav navbar-right">
-                            <li><a href="#" className="active" style={styleFour}>Home</a></li>
-                            <li><a href="#" style={styleFour}>About</a></li>
-                            <li><a href="#" style={styleFour}>Search</a></li>
-                            <li><a href="#" style={styleFour}>Contact</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </nav>  
+        
             <div id="home" style={styleFive}>
                 <div className="landing-text" style={styleSix}>
                     <h1 style={styleSeven}>California Tour Guide</h1>
                     <h3>Travel Made Easy</h3>
-                    <a href="#" className="btn btn-default btn-lg">Lets get started!!</a>
+                    <li><NavLink to = "/home" className="btn btn-default btn-lg">Lets get started!!</NavLink></li>
                 </div>
             </div>
             <div className="padding" style={styleEight}>
@@ -133,6 +135,11 @@ const App=() =>{
                     <div className="col-sm-6 text-center">
                         <h2>Welcome to Californiaaa!!</h2>
                         <p className="lead">This website welcomes you to California exploration.Go ahead and explore yourself</p>
+                         <div>
+            {this.state.contests.map(contest =>
+                <ContestPreview {...contest} />
+            )}
+        </div>
                     </div>
                 </div>
             </div>
@@ -172,9 +179,10 @@ const App=() =>{
                     </div>
                 </div>
             </footer>
-        </div>                     
-  </div>
+    </div>
+
     );
 };
+}
 
 export default App;
