@@ -25,7 +25,7 @@ componentDidMount(){
             });
     })
     .catch(console.error);
-    
+
 }
 
 
@@ -40,15 +40,15 @@ componentDidMount(){
               backgroundColor: '#23415C',
               padding: '1% 0',
               fontSize:'1.2em'
-          }; 
+          };
     const styleThree=
           {
               maxHeight:'40px',
-          }; 
+          };
     const styleFour=
           {
               color: '#D5D5D5',
-              
+
           };
      const styleFive=
           {
@@ -62,30 +62,30 @@ componentDidMount(){
               backgroundPosition:'center',
               overflow: 'hidden'
             };
-    
+
     const styleSix=
           {
               display:'table-cell',
               textAlign:'center',
               verticalAlign:'middle'
           };
-    
+
     const styleSeven=
           {
               fontSize:'500%',
               fontWeight:'700%'
           };
-    
+
     const styleEight=
           {
               padding:'80px 0'
           };
-    
+
     const styleNine=
           {
               width:'100%'
           };
-    
+
     const styleTen=
           {
               display: 'table',
@@ -106,19 +106,19 @@ componentDidMount(){
               padding:'5% 5% 10% 5%',
               color:'#FFF'
           };
-    
+
     const styleTwelve=
           {
               padding:'15px',
               fontSize:'25px',
               color:'#FFF'
           };
-    
-    
+
+
     return(
-      
+
    <div className="App">
-        
+
             <div id="home" style={styleFive}>
                 <div className="landing-text" style={styleSix}>
                     <h1 style={styleSeven}>California Tour Guide</h1>
@@ -130,8 +130,8 @@ componentDidMount(){
             <div className="container">
                 <div className="row">
                     <div className="col-sm-6">
-                        <img src={require('../img/californiaMap.jpeg')} style={styleNine}/> 
-                    </div>    
+                        <img src={require('../img/californiaMap.jpeg')} style={styleNine}/>
+                    </div>
                     <div className="col-sm-6 text-center">
                         <h2>Welcome to Californiaaa!!</h2>
                         <p className="lead">This website welcomes you to California exploration.Go ahead and explore yourself</p>
@@ -148,13 +148,13 @@ componentDidMount(){
             <div className="container">
                 <div className="row">
                     <div className="col-lg-4 col-md-4 col-sm-6 col-xs-12">
-                        <img src={require('../img/tahoe.jpeg')} className="img-responsive" style={styleNine} /> 
+                        <img src={require('../img/tahoe.jpeg')} className="img-responsive" style={styleNine} />
                     </div>
                     <div className="col-lg-4 col-md-4 col-sm-6 col-xs-12">
-                        <img src={require('../img/disney2.jpg')} className="img-responsive" style={styleNine} /> 
+                        <img src={require('../img/disney2.jpg')} className="img-responsive" style={styleNine} />
                     </div>
                     <div className="col-lg-4 col-md-4 col-sm-6 col-xs-12">
-                        <img src={require('../img/ggb.jpeg')} className="img-responsive" style={styleNine} /> 
+                        <img src={require('../img/ggb.jpeg')} className="img-responsive" style={styleNine} />
                     </div>
                 </div>
             </div>

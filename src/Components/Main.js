@@ -7,17 +7,20 @@ import App from './App';
 import Search from './Search';
 import imageurl from '../img/mountains.jpeg';
 import natureurl from '../img/background.jpg';
+import Monterey from './Monterey';
+import Bridges from './Bridges';
+import Locations from './Locations';
 
 
 
 
 class Main extends React.Component {
-    
+
 
 
 
     render(){
-    const styleOne = 
+    const styleOne =
           {
             height:'10%',
             width:'10%'
@@ -27,15 +30,15 @@ class Main extends React.Component {
               backgroundColor: '#23415C',
               padding: '1% 0',
               fontSize:'1.2em'
-          }; 
+          };
     const styleThree=
           {
               maxHeight:'40px',
-          }; 
+          };
     const styleFour=
           {
               color: '#D5D5D5',
-              
+
           };
     const styleFive=
           {
@@ -49,30 +52,30 @@ class Main extends React.Component {
               backgroundPosition:'center',
               overflow: 'hidden'
             };
-    
+
     const styleSix=
           {
               display:'table-cell',
               textAlign:'center',
               verticalAlign:'middle'
           };
-    
+
     const styleSeven=
           {
               fontSize:'500%',
               fontWeight:'700%'
           };
-    
+
     const styleEight=
           {
               padding:'80px 0'
           };
-    
+
     const styleNine=
           {
               width:'100%'
           };
-    
+
     const styleTen=
           {
               display: 'table',
@@ -93,15 +96,15 @@ class Main extends React.Component {
               padding:'5% 5% 10% 5%',
               color:'#FFF'
           };
-    
+
     const styleTwelve=
           {
               padding:'15px',
               fontSize:'25px',
               color:'#FFF'
           };
-    
-    
+
+
     return(
     <HashRouter>
         <div className="Main">
@@ -111,12 +114,12 @@ class Main extends React.Component {
                     <div className="container-fluid">
                         <div className="navbar-header">
                             <button type="button" className="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-main">
-                                <span className="sr-only">Toggle navigation</span>  
+                                <span className="sr-only">Toggle navigation</span>
                                 <span className="icon-bar"></span>
                                 <span className="icon-bar"></span>
                                 <span className="icon-bar"></span>
                             </button>
-                             <a className="navbar-brand" href="#"><img src={require('../img/small.png')} style={styleThree} /> 
+                             <a className="navbar-brand" href="#"><img src={require('../img/small.png')} style={styleThree} />
                             </a>
                         </div>
                         <div className="collapse navbar-collapse" id="navbar-collapse-main">
@@ -128,14 +131,17 @@ class Main extends React.Component {
                             </ul>
                         </div>
                     </div>
-                </nav>  
+                </nav>
             </div>
-        
-       
+
+
             <div className="content">
                 <Route exact path ="/" component={App} />
                 <Route path ="/Home" component={Home} />
                 <Route path ="/Search" component={Search} />
+                <Route path='/Locations' component={Locations}></Route>
+                <Route path = "/Monterey" component={Monterey}/>
+                <Route path = "/Bridges" component={Bridges}/>
             </div>
         </div>
     </HashRouter>
