@@ -4,23 +4,18 @@ import axios from 'axios';
 
 class Monterey extends React.Component {
         state={
-    search:[]
-};
+            search:[]
+              };
 
 componentDidMount(){
 
-
-
     axios.get('/api/Monterey')
     .then(resp=>{
-        //console.log(resp);
         console.log(resp);
         this.setState({
-
-                search: resp.data.search
-            });
-
-    })
+                        search: resp.data.search
+                      });
+          })
     .catch(console.error);
 
 }

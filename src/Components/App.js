@@ -5,9 +5,8 @@ import imageurl from '../img/mountains.jpeg';
 import natureurl from '../img/background.jpg';
 import ContestPreview from './ContestPreview';
 import { Link, NavLink, HashRouter, Route } from 'react-router-dom';
-
-
-
+import { Button } from 'react-bootstrap';
+import { Jumbotron, Grid, Row, Col, Image } from 'react-bootstrap';
 
 class App extends React.Component {
 
@@ -29,17 +28,18 @@ componentDidMount(){
 }
 
 
-    render(){
-    const styleOne = 
+render(){
+    const styleOne =
           {
             height:'10%',
             width:'10%'
           };
     const styleTwo=
           {
-              backgroundColor: '#23415C',
+              backgroundColor: '#7575a3',
               padding: '1% 0',
-              fontSize:'1.2em'
+              fontSize:'1.2em',
+              borderBottom:'0px'
           };
     const styleThree=
           {
@@ -47,7 +47,7 @@ componentDidMount(){
           };
     const styleFour=
           {
-              color: '#D5D5D5',
+              color: 'WHITE'
 
           };
      const styleFive=
@@ -78,7 +78,7 @@ componentDidMount(){
 
     const styleEight=
           {
-              padding:'80px 0'
+              padding:'80px 50px'
           };
 
     const styleNine=
@@ -102,8 +102,8 @@ componentDidMount(){
     const styleEleven=
           {
               width:'100%',
-              backgroundColor:'#23415C',
-              padding:'5% 5% 10% 5%',
+              backgroundColor:'#7575a3',
+              padding:'1% 1% 1% 1%',
               color:'#FFF'
           };
 
@@ -114,36 +114,109 @@ componentDidMount(){
               color:'#FFF'
           };
 
+    const styleThirteen=
+                    {
+                      marginTop: '0',
+                      width: '100%',
+                      height: '500px',
+                      opacity:'0.5'
+                  };
+
+                  const styleFourteen={
+                      top: '10%',
+                      transform:'translateY(-50%)',
+                      textTransform:'uppercase',
+                      fontSize: '60px',
+                      fontFamily:'Aladin'
+                  };
+                  const styleSixteen=
+                  {
+                      fontFamily:'Allan',
+                      fontSize:'40px',
+                  };
+
+                  const styleWelcome=
+                  {
+                    fontFamily:'Allan'
+                  };
+
+                  const styleAtma=
+                  {
+                    fontFamily:'Atma',
+                    textAlign:'center',
+                    fontSize:'17px'
+                  };
+
+                  const styleButton=
+                  {
+                    fontFamily:'Atma',
+                    padding:'20px'
+                  };
 
     return(
 
    <div className="App">
 
-            <div id="home" style={styleFive}>
-                <div className="landing-text" style={styleSix}>
-                    <h1 style={styleSeven}>California Tour Guide</h1>
-                    <h3>Travel Made Easy</h3>
-                    <li><NavLink to = "/home" className="btn btn-default btn-lg">Lets get started!!</NavLink></li>
-                </div>
+
+   <div id="myCarousel" className="carousel slide" data-ride="carousel">
+           <ol className="carousel-indicators">
+               <li data-target="#myCarousel" data-slide-to="0" className="active"></li>
+               <li data-target="#myCarousel" data-slide-to="1" ></li>
+               <li data-target="#myCarousel" data-slide-to="2" ></li>
+               <li data-target="#myCarousel" data-slide-to="3" ></li>
+           </ol>
+           <div className="carousel-inner" role="listbox">
+                 <div className="item active">
+                     <img src={require('../img/laketahoe.jpg')} style={styleThirteen}/>
+                        <div className="carousel-caption">
+                           <h1 className="display-2" style={styleFourteen}><b>California Tour Guide</b></h1>
+                           <h3 style={styleSixteen}><b>Travel Made Easy</b></h3>
+                        </div>
+                 </div>
+                 <div className="item">
+                     <img src={require('../img/sf.jpg')} style={styleThirteen}/>
+                 </div>
+                 <div className="item">
+                     <img src={require('../img/autumn.jpg')} style={styleThirteen}/>
+                 </div>
+                 <div className="item">
+                     <img src={require('../img/deathvalley.jpg')} style={styleThirteen}/>
+                 </div>
             </div>
-            <div className="padding" style={styleEight}>
-            <div className="container">
-                <div className="row">
-                    <div className="col-sm-6">
-                        <img src={require('../img/californiaMap.jpeg')} style={styleNine}/>
-                    </div>
-                    <div className="col-sm-6 text-center">
-                        <h2>Welcome to Californiaaa!!</h2>
-                        <p className="lead">This website welcomes you to California exploration.Go ahead and explore yourself</p>
-                         <div>
-            {this.state.contests.map(contest =>
-                <ContestPreview {...contest} />
-            )}
-        </div>
-                    </div>
-                </div>
-            </div>
-            </div>
+    </div>
+
+           <div className="padding" style={styleEight}>
+                       <div className="container">
+                           <div className="row">
+                               <div className="col-sm-6">
+                                   <img src={require('../img/calibear.png')} style={styleNine}/>
+                               </div>
+                               <div className="col-sm-6 text-center">
+                                  <button><NavLink to = "/Search" className="btn btn-default btn-lg" style={styleButton} >Lets get started!!</NavLink></button>
+                                   <h2 style={styleWelcome}>Welcome to Californiaaa!!</h2>
+                                   <p className="lead">This website welcomes you to California exploration and gives an easy search for must visit places
+                                   of the state.
+                                   Planning your next vacation is more fun now! Go ahead and explore yourself</p>
+                                   <div style={styleAtma}>
+                                   <p>Quick facts for curious minds</p>
+
+                                   <p><b>State Capital:</b> Sacramento</p>
+                                   <p><b>Land Area:</b> 155,959 square miles</p>
+                                   <p><b>Number of counties:</b> 58</p>
+                                   <p><b>State Flower:</b> Golden Poppy</p>
+                                   <p><b>State Bird:</b> California Quail</p>
+                                   <p><b>State Tree:</b> California Redwoods</p>
+                                   <p><b>State Animal:</b> Grizzly Bear</p>
+                                   <p><b>Highest Spot:</b> Mt. Whitney</p>
+                                   <p><b>Lowest Spot:</b> Bad Water, Death Valley</p>
+                                   </div>
+
+                               </div>
+                           </div>
+                       </div>
+                       </div>
+
+
             <div className="padding" style={styleEight}>
             <div className="container">
                 <div className="row">
@@ -171,11 +244,11 @@ componentDidMount(){
                     </div>
                     <div className="col-sm-6">
                         <h3>Connect</h3>
-                        <a href="#" className="fa fa-facebook" style={styleTwelve}></a>
-                        <a href="#" className="fa fa-twitter" style={styleTwelve}></a>
-                        <a href="#" className="fa fa-google" style={styleTwelve}></a>
-                        <a href="#" className="fa fa-linkedin" style={styleTwelve}></a>
-                        <a href="#" className="fa fa-youtube" style={styleTwelve}></a>
+                        <a href="https://www.facebook.com" className="fa fa-facebook" style={styleTwelve}></a>
+                        <a href="https://www.twitter.com" className="fa fa-twitter" style={styleTwelve}></a>
+                        <a href="https://www.google.com" className="fa fa-google" style={styleTwelve}></a>
+                        <a href="https://www.linkedin.com" className="fa fa-linkedin" style={styleTwelve}></a>
+                        <a href="https://www.youtube.com" className="fa fa-youtube" style={styleTwelve}></a>
                     </div>
                 </div>
             </footer>

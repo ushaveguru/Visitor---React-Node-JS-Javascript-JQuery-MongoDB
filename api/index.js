@@ -13,8 +13,6 @@ MongoClient.connect(config.mongodbUri, (err,db)=>{
 });
 
 
-
-
 const router =express.Router();
 router.get('/search', (req,res)=>{
     //let search={};
@@ -26,6 +24,9 @@ router.get('/search', (req,res)=>{
         res.send({search:docs});
     });
 });
+
+//Start of fetching DB data for cities
+
 router.get('/Monterey', (req,res)=>{
         //let search={};
 
@@ -37,27 +38,172 @@ router.get('/Monterey', (req,res)=>{
         });
 });
 
+router.get('/SanFrancisco', (req,res)=>{
+
+        mdb.collection('loc_search').find({City: { $in: [ "San Francisco" ] }}).toArray(function (err,docs){
+           if (err) throw err;
+
+            res.send({search:docs});
+        });
+});
+
+router.get('/Tahoe', (req,res)=>{
+
+        mdb.collection('loc_search').find({City: { $in: [ "Tahoe" ] }}).toArray(function (err,docs){
+           if (err) throw err;
+
+            res.send({search:docs});
+        });
+});
+
+router.get('/Yosemite', (req,res)=>{
+
+        mdb.collection('loc_search').find({City: { $in: [ "Yosemite" ] }}).toArray(function (err,docs){
+           if (err) throw err;
+
+            res.send({search:docs});
+        });
+});
+
+router.get('/BigSur', (req,res)=>{
+
+        mdb.collection('loc_search').find({City: { $in: [ "Big Sur" ] }}).toArray(function (err,docs){
+           if (err) throw err;
+
+            res.send({search:docs});
+        });
+});
+
+router.get('/Oroville', (req,res)=>{
+
+        mdb.collection('loc_search').find({City: { $in: [ "Oroville" ] }}).toArray(function (err,docs){
+           if (err) throw err;
+
+            res.send({search:docs});
+        });
+});
+
+router.get('/NevadaCounty', (req,res)=>{
+
+        mdb.collection('loc_search').find({City: { $in: [ "Nevada County" ] }}).toArray(function (err,docs){
+           if (err) throw err;
+
+            res.send({search:docs});
+        });
+});
+
+router.get('/SantaCruz', (req,res)=>{
+
+        mdb.collection('loc_search').find({City: { $in: [ "Santa Cruz" ] }}).toArray(function (err,docs){
+           if (err) throw err;
+
+            res.send({search:docs});
+        });
+});
+
+router.get('/LosAngeles', (req,res)=>{
+
+        mdb.collection('loc_search').find({City: { $in: [ "Los Angeles" ] }}).toArray(function (err,docs){
+           if (err) throw err;
+
+            res.send({search:docs});
+        });
+});
+
+router.get('/SanDiego', (req,res)=>{
+
+        mdb.collection('loc_search').find({City: { $in: [ "San Diego" ] }}).toArray(function (err,docs){
+           if (err) throw err;
+
+            res.send({search:docs});
+        });
+});
+
+router.get('/Crescent', (req,res)=>{
+
+        mdb.collection('loc_search').find({City: { $in: [ "Crescent" ] }}).toArray(function (err,docs){
+           if (err) throw err;
+
+            res.send({search:docs});
+        });
+});
+
+router.get('/StovepipeWells', (req,res)=>{
+
+        mdb.collection('loc_search').find({City: { $in: [ "Stovepipe Wells" ] }}).toArray(function (err,docs){
+           if (err) throw err;
+
+            res.send({search:docs});
+        });
+});
+
+router.get('/Oakland', (req,res)=>{
+
+        mdb.collection('loc_search').find({City: { $in: [ "Oakland" ] }}).toArray(function (err,docs){
+           if (err) throw err;
+
+            res.send({search:docs});
+        });
+});
+
+//End of fetching DB data for cities
+
+
+//Start of fetching DB data for types
+
 router.get('/Bridges', (req,res)=>{
         //let search={};
+        mdb.collection('type_search').find({typeoflocation: { $in: [ "bridges" ] }}).toArray(function(err,docs){
+          if (err) throw err;
 
+            res.send({search:docs});
 
-        mdb.collection('type_search').find({typeoflocation: { $in: [ "bridges" ] }}).toArray(function (err,docs){
+      });
+});
+
+router.get('/Waterfalls', (req,res)=>{
+        mdb.collection('type_search').find({typeoflocation: { $in: [ "waterfalls" ] }}).toArray(function (err,docs){
            if (err) throw err;
-
             res.send({search:docs});
         });
 });
 
-router.get('/sanjose', (req,res)=>{
-        //let search={};
-
-
-        mdb.collection('loc_search').find({City: { $in: [ "San Jose" ] }}).toArray(function (err,docs){
+router.get('/Lakes', (req,res)=>{
+        mdb.collection('type_search').find({typeoflocation: { $in: [ "lakes" ] }}).toArray(function (err,docs){
            if (err) throw err;
-
             res.send({search:docs});
         });
 });
+
+router.get('/AmusementParks', (req,res)=>{
+        mdb.collection('type_search').find({typeoflocation: { $in: [ "amusementparks" ] }}).toArray(function (err,docs){
+           if (err) throw err;
+            res.send({search:docs});
+        });
+});
+
+router.get('/NationalParks', (req,res)=>{
+        mdb.collection('type_search').find({typeoflocation: { $in: [ "nationalparks" ] }}).toArray(function (err,docs){
+           if (err) throw err;
+            res.send({search:docs});
+        });
+});
+
+router.get('/Beaches', (req,res)=>{
+        mdb.collection('type_search').find({typeoflocation: { $in: [ "beaches" ] }}).toArray(function (err,docs){
+           if (err) throw err;
+            res.send({search:docs});
+        });
+});
+
+router.get('/Zoos', (req,res)=>{
+        mdb.collection('type_search').find({typeoflocation: { $in: [ "zoos" ] }}).toArray(function (err,docs){
+           if (err) throw err;
+            res.send({search:docs});
+        });
+});
+
+//End of fetching DB data for types
 
 router.get('/contests', (req,res)=>{
     res.send({contests:data.contests});

@@ -1,0 +1,117 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8"/>
+  <title>React Gif</title>
+  <style>
+    body {
+      font-family: "Helvetica Neue", Helvetica, sans-serif;
+      font-weight: 200;
+      margin: 0 auto;
+      width: 750px;
+    }
+    textarea {
+      font-family: monospace;
+      font-size: inherit;
+      height: 150px;
+      width: 100%;
+    }
+    pre {
+      white-space: pre-wrap;
+    }
+    label {
+      display: inline-block;
+      min-width: 60px;
+    }
+    label > span {
+      padding-right: 10px;
+    }
+    .controls {
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div id="root"></div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.1.0/react.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.1.0/react-dom.js"></script>
+  <script src='https://npmcdn.com/babel-transform-in-browser@6.4.6/dist/btib.min.js'></script>
+  <script src="dist/react-gif.js"></script>
+  <script type="text/es2015">
+    var gifs = [
+      'http://i.imgur.com/iKXH4E2.gif', // ghost in the shell
+      'http://i.imgur.com/wTMh99n.gif', // hypnotoad
+      'http://i.imgur.com/qlBYFuD.gif', // penguin 1
+      'http://i.imgur.com/VcyI2Ip.gif', // penguin 2
+      'http://i.imgur.com/ARsNpSD.gif'  // toothless
+    ];
+
+    var Gif = ReactGif.default;
+
+    var App = React.createClass({
+      getInitialState: function() {
+        return {
+          playing: true,
+          speed: 1,
+          url: gifs[Math.floor(Math.random()*gifs.length)]
+        };
+      },
+
+      handleURL: function(e) {
+        var url = this.refs.url.getDOMNode().value;
+        this.setState({
+          url: url
+        });
+      },
+
+      handlePause: function() {
+        this.setState({
+          playing: false
+        });
+      },
+
+      handlePlay: function() {
+        this.setState({
+          playing: true
+        });
+      },
+
+      handleSpeed: function(e) {
+        this.setState({
+          speed: e.target.value
+        });
+      },
+
+      render: function () {
+        return (
+          <div>
+            <h1>react-gif</h1>
+            <Gif
+              ref={ref => this._gifRef = ref }
+              src={this.state.url}
+              playing={this.state.playing}
+              speed={this.state.speed}
+            />
+            <div className='controls'>
+              <button onClick={this.handlePlay}>play</button>
+              <button onClick={this.handlePause}>pause</button>
+            </div>
+            <div className='controls'>
+              <label>url: </label>
+              <input type='text' ref='url' defaultValue={this.state.url} />
+              <button onClick={this.handleURL}>load</button>
+            </div>
+            <div className='controls'>
+              <label>speed:</label>
+              <input type="range" min="0.1" max="3.0" step="0.1" onChange={this.handleSpeed} />
+              {this.state.speed}
+            </div>
+          </div>
+        );
+      }
+    });
+
+    ReactDOM.render(<App/>, document.getElementById('root'));
+  </script>
+</body>
+</html>
