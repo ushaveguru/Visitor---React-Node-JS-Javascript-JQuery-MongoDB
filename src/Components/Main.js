@@ -41,7 +41,8 @@ import MccloudFalls from './MccloudFalls';
 import RainbowFalls from './RainbowFalls';
 import BakerBeach from './BakerBeach';
 import OaklandZoo from './OaklandZoo';
-
+import BridgeReview1 from './BridgeReview1';
+import BridgeReview2 from './BridgeReview2';
 
 
 class Main extends React.Component {
@@ -196,6 +197,8 @@ class Main extends React.Component {
                 <Route path="/RainbowFalls" component={RainbowFalls}/>
                 <Route path="/BakerBeach" component={BakerBeach}/>
                 <Route path="/OaklandZoo" component={OaklandZoo}/>
+                <Route path="/BridgeReview1" component={BridgeReview1}/>
+                <Route path="/BridgeReview2" component={BridgeReview2}/>
           </div>
         </div>
     </HashRouter>

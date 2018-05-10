@@ -3,6 +3,7 @@ import data from '../src/testData';
 import {MongoClient} from 'mongodb';
 import assert from 'assert';
 import  config from '../config';
+var bodyParser = require('body-parser');
 
 let mdb;
 MongoClient.connect(config.mongodbUri, (err,db)=>{
@@ -207,6 +208,33 @@ router.get('/Zoos', (req,res)=>{
 
 router.get('/contests', (req,res)=>{
     res.send({contests:data.contests});
+});
+
+router.post('/BridgePreview',(req,res)=>{
+  const ParkingAvaliablity = req.body.ParkingAvaliablity;
+  const ViewPoints = req.body.ViewPoints;
+  const KidFriendly = req.body.KidFriendly;
+  const BestTimeToVisit = req.body.BestTimeToVisit;
+  const WouldVisitAgain = req.body.WouldVisitAgain;
+  const Comments = req.body.Comments;
+  console.log( req.body.ParkingAvailability);
+  var myobj = {ParkingAvaliablity:ParkingAvaliablity,ViewPoints:ViewPoints,KidFriendly:KidFriendly,BestTimeToVisit:BestTimeToVisit,WouldVisitAgain:WouldVisitAgain,Comments:Comments}
+  mdb.collection("loc_new_review").insertOne(myobj, function(err, res) {
+   if (err) throw err;
+   console.log("1 document inserted");
+});
+});
+
+
+router.get('/BridgeReview', (req,res)=>{
+        //let search={};
+
+
+        mdb.collection('loc_new_review').find({}).toArray(function (err,docs){
+           if (err) throw err;
+
+            res.send({search:docs});
+        });
 });
 
 export default router;
