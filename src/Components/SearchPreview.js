@@ -1,6 +1,8 @@
 import React from 'react';
 import { createHashHistory } from 'history';
 import { Link, NavLink, HashRouter, Route, withRouter, Redirect } from 'react-router-dom';
+import { Button } from 'react-bootstrap';
+import { ListGroup, ListGroupItem } from 'react-bootstrap';
 
 class SearchPreview extends React.Component {
   getComponentPlaces(e,value) {
@@ -19,15 +21,16 @@ class SearchPreview extends React.Component {
    var search  = this.props;
      return (
        <div className="SearchPreview">
+       <div>
+
+          <b><Button bsStyle="success" bsSize="large"> Select from one of the following places in {search.City}</Button></b><br /><br />
+       </div>
            <div>
-               {search.City}
-           </div>
-           <div>
-              {search.Loc_array.map(e =><li>{e.type_loc}</li>)}<br />
+
 
 
            {search.Loc_array.map(e =>e.name_of_location.map((item, index) => (
-              <li className='indent' onClick={(evt) => this.getComponentPlaces(evt,{item})} key={index}> {item} </li>
+              <b><ListGroup><ListGroupItem bsStyle="success" bsSize="large" block className='indent' onClick={(evt) => this.getComponentPlaces(evt,{item})} key={index}> <center>{item}</center> </ListGroupItem></ListGroup></b>
            )))}
             </div>
        </div>

@@ -30,7 +30,7 @@ class GoldenGateBridge extends React.Component {
                 height: '50%',
                 position:'relative',
                 width:'100%',
-                padding:'8px 0 2px 0',
+                padding:'10px 0px 2px 0',
                 overflow:'scroll'
               };
 
@@ -39,17 +39,14 @@ class GoldenGateBridge extends React.Component {
           {
             fontSize:'40px',
             backgroundColor:'#7575a3',
-            position:'absolute'
+
           };
 
           const styleThree=
           {
             fontSize:'20px',
             backgroundColor:'#7575a3',
-            color:'white',
-            float:'right',
-            position:'inline'
-
+            color:'white'
           };
 
           const styleFour=
@@ -74,15 +71,14 @@ class GoldenGateBridge extends React.Component {
           <Breadcrumb>
              <BreadcrumbItem><NavLink to="/#">Home</NavLink></BreadcrumbItem>
              <BreadcrumbItem><NavLink to="/Bridges">Bridges</NavLink></BreadcrumbItem>
-             <BreadcrumbItem active>Golden Bridge</BreadcrumbItem>
+             <BreadcrumbItem active>Golden Gate Bridge</BreadcrumbItem>
            </Breadcrumb>
              </div>
 
 
 
              <div className="BridgeReview">
-             <h1><Badge color="Info" style={styleTwo} >GOLDEN GATE BRIDGE</Badge></h1>
-              <button style={styleThree} onClick={(e) => this.getComponentBridges(e,"BridgeReview")}>View/Add Reviews</button>
+          <center>     <h1><Badge color="Info" style={styleTwo} >GOLDEN GATE BRIDGE</Badge></h1></center>
              <img src={require('../img/ggb.jpg')} style={styleOne}/>
                    <Row className="show-grid text-center">
                      <Col xs={12} sm={4} className="person-wrapper">
@@ -95,9 +91,15 @@ class GoldenGateBridge extends React.Component {
                         of Civil Engineers.</h4>
                      </Col>
                      <Col xs={12} sm={4} className="person-wrapper">
-                        
+                     <h4 style={styleFour} className='border border-primary'> In May 1924, Colonel Herbert Deakyne held the second hearing on the Bridge on behalf of the Secretary of
+                     War in a request to use federal land for construction. Deakyne, on behalf of the Secretary of War, approved the
+                     transfer of land needed for the bridge structure and leading roads to and both San Francisco County and Marin County,
+                      pending further bridge plans by Strauss.[19] Another ally was the fledgling automobile industry, which supported the
+                      development of roads and bridges to increase demand for automobiles. Strauss was chief engineer in charge of overall
+                       design and construction of the bridge project.</h4>
                      </Col>
                      <Col xs={12} sm={4} className="person-wrapper"><br /><br />
+                          <button style={styleThree} block onClick={(e) => this.getComponentBridges(e,"BridgeReview")}>View/Add Reviews</button>
                      </Col>
                    </Row>
                </div>

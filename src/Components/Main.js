@@ -5,6 +5,7 @@ import Radium from 'radium';
 import { Link, NavLink, HashRouter, Route } from 'react-router-dom';
 import { Jumbotron, Grid, Row, Col, Image } from 'react-bootstrap';
 import { Card, CardImg, CardText, CardBody, CardTitle, CardSubtitle } from 'react-bootstrap';
+import { Button } from 'react-bootstrap';
 import About from './About';
 import App from './App';
 import Search from './Search';
@@ -28,14 +29,19 @@ import Bridges from './Bridges';
 import Waterfalls from './Waterfalls';
 import Beaches from './Beaches';
 import AmusementParks from './AmusementParks';
+import WaterfallsReview from './WaterfallsReview';
 import NationalParks from './NationalParks';
 import Lakes from './Lakes';
 import Zoos from './Zoos';
 import BayBridge from './BayBridge';
 import BixbyBridge from './BixbyBridge';
 import GoldenGateBridge from './GoldenGateBridge';
-import { Button } from 'react-bootstrap';
-import GoogleMapReact from 'google-map-react';
+import McwayFalls from './McwayFalls';
+import MccloudFalls from './MccloudFalls';
+import RainbowFalls from './RainbowFalls';
+import BakerBeach from './BakerBeach';
+import OaklandZoo from './OaklandZoo';
+
 
 
 class Main extends React.Component {
@@ -118,19 +124,13 @@ class Main extends React.Component {
                         fontSize:'25px',
                         color:'#FFF'
                     };
-                const styleNavbarheader=
-                {
-                  marginBottom:'0'
-                };
+
                  const styleMain=
                  {
                    height:'100%',
                    width:'100%'
                  };
-                 const styleContainer=
-                 {
-                   marginTop:'0'
-                 }
+
 
 
     return(
@@ -184,13 +184,19 @@ class Main extends React.Component {
                 <Route path = "/Waterfalls" component={Waterfalls}/>
                 <Route path = "/Beaches" component={Beaches}/>
                 <Route path = "/AmusementParks" component={AmusementParks}/>
+                <Route path = "/WaterfallsReview" component={WaterfallsReview}/>
                 <Route path = "/Lakes" component={Lakes}/>
                 <Route path = "/NationalParks" component={NationalParks}/>
                 <Route path = "/Zoos" component={Zoos}/>
                 <Route path="/GoldenGateBridge" component={GoldenGateBridge}/>
                 <Route path="/BayBridge" component={BayBridge}/>
                 <Route path="/BixbyBridge" component={BixbyBridge}/>
-            </div>
+                <Route path="/McwayFalls" component={McwayFalls}/>
+                <Route path="/MccloudFalls" component={MccloudFalls}/>
+                <Route path="/RainbowFalls" component={RainbowFalls}/>
+                <Route path="/BakerBeach" component={BakerBeach}/>
+                <Route path="/OaklandZoo" component={OaklandZoo}/>
+          </div>
         </div>
     </HashRouter>
     );

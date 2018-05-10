@@ -116,10 +116,10 @@ render(){
 
     const styleThirteen=
                     {
-                      marginTop: '0',
+                      marginTop: '0px',
                       width: '100%',
                       height: '500px',
-                      opacity:'0.5'
+                      opacity:'0.9'
                   };
 
                   const styleFourteen={
@@ -151,6 +151,16 @@ render(){
                   {
                     fontFamily:'Atma',
                     padding:'20px'
+                  };
+
+                  const styleSize=
+                  {
+                    fontSize:'25px'
+                  };
+
+                  const styleAlign=
+                  {
+                    textAlign:'justify'
                   };
 
     return(
@@ -194,11 +204,11 @@ render(){
                                <div className="col-sm-6 text-center">
                                   <button><NavLink to = "/Search" className="btn btn-default btn-lg" style={styleButton} >Lets get started!!</NavLink></button>
                                    <h2 style={styleWelcome}>Welcome to Californiaaa!!</h2>
-                                   <p className="lead">This website welcomes you to California exploration and gives an easy search for must visit places
+                                   <p className="lead" style={styleAlign}>This website welcomes you to California exploration and gives an easy search for must visit places
                                    of the state.
-                                   Planning your next vacation is more fun now! Go ahead and explore yourself</p>
+                                   Planning your next vacation is more fun now! Go ahead and explore yourself.</p>
                                    <div style={styleAtma}>
-                                   <p>Quick facts for curious minds</p>
+                                   <p style={styleSize}>Quick facts for curious minds</p>
 
                                    <p><b>State Capital:</b> Sacramento</p>
                                    <p><b>Land Area:</b> 155,959 square miles</p>

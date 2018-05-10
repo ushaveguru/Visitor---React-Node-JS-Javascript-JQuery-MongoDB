@@ -332,7 +332,7 @@ class Search extends React.Component {
                                   <div className="container-fluid padding">
                                     <div className="row text center">
                                       <div className="col-sm-6 col-md-3">
-                                        <p>Bridges are fun</p>
+                                        <p>Bridges in California are spread across entire state</p>
                                     </div>
                                 </div>
                               </div>
