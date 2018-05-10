@@ -4,7 +4,8 @@ import axios from 'axios';
 import { createHashHistory } from 'history';
 import { Link, NavLink, HashRouter, Route, withRouter, Redirect } from 'react-router-dom';
 import {Gmaps, Marker, InfoWindow, Circle} from 'react-gmaps';
-import ZooReview from './ZooReview';
+import ZooReview1 from './ZooReview1';
+import ZooReview2 from './ZooReview2';
 import { Jumbotron, Grid, Row, Col, Image } from 'react-bootstrap';
 import './style.css';
 import MapContainer from './MapContainer';
@@ -14,8 +15,15 @@ import { Breadcrumb, BreadcrumbItem } from 'react-bootstrap';
 
 
 class OaklandZoo extends React.Component {
-  getComponentBeaches(e,value) {
-    history.push('/ZooReview');
+  getComponentBeaches1(e,value) {
+    history.push('/ZooReview1');
+    $(e.target).css({
+        'background-color': '#ccc'
+    });
+  }
+
+  getComponentBeaches2(e,value) {
+    history.push('/ZooReview2');
     $(e.target).css({
         'background-color': '#ccc'
     });
@@ -95,7 +103,8 @@ class OaklandZoo extends React.Component {
                       conservation with a focus on this state’s remarkable native wildlife—both past and present.</h4>
                      </Col>
                      <Col xs={12} sm={4} className="person-wrapper"><br /><br />
-                          <button style={styleThree} block onClick={(e) => this.getComponentBeaches(e,"ZooReview")}>View/Add Reviews</button>
+                          <button style={styleThree} block onClick={(e) => this.getComponentBeaches(e,"ZooReview1")}>View Reviews</button><br />
+                          <button style={styleThree} block onClick={(e) => this.getComponentBeaches(e,"ZooReview2")}>Add Reviews</button><br />
                      </Col>
                    </Row>
                </div>

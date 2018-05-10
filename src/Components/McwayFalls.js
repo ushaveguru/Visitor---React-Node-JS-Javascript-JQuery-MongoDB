@@ -4,7 +4,8 @@ import axios from 'axios';
 import { createHashHistory } from 'history';
 import { Link, NavLink, HashRouter, Route, withRouter, Redirect } from 'react-router-dom';
 import {Gmaps, Marker, InfoWindow, Circle} from 'react-gmaps';
-import WaterfallsReview from './WaterfallsReview';
+import WaterfallsReview1 from './WaterfallsReview1';
+import WaterfallsReview2 from './WaterfallsReview2';
 import { Jumbotron, Grid, Row, Col, Image } from 'react-bootstrap';
 import './style.css';
 import MapContainer from './MapContainer';
@@ -14,8 +15,16 @@ import { Breadcrumb, BreadcrumbItem } from 'react-bootstrap';
 
 
 class McwayFalls extends React.Component {
-  getComponentWaterFalls(e,value) {
-    history.push('/WaterFallsReview');
+  getComponentWaterFalls1(e,value) {
+    history.push('/WaterfallsReview1');
+    $(e.target).css({
+        'background-color': '#ccc'
+    });
+  }
+
+
+  getComponentWaterFalls2(e,value) {
+    history.push('/WaterfallsReview2');
     $(e.target).css({
         'background-color': '#ccc'
     });
@@ -100,7 +109,8 @@ class McwayFalls extends React.Component {
                           falls drop directly into the ocean again</h4>
                      </Col>
                      <Col xs={12} sm={4} className="person-wrapper"><br /><br />
-                          <button style={styleThree} block onClick={(e) => this.getComponentWaterFalls(e,"WaterFallsReview")}>View/Add Reviews</button>
+                          <button style={styleThree} block onClick={(e) => this.getComponentWaterFalls1(e,"WaterfallsReview1")}>View Reviews</button><br /><br />
+                          <button style={styleThree} block onClick={(e) => this.getComponentWaterFalls2(e,"WaterfallsReview2")}>Add Reviews</button><br />
                      </Col>
                    </Row>
                </div>

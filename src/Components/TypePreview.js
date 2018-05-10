@@ -24,11 +24,11 @@ class TypePreview extends React.Component {
        return (
          <div className="TypePreview">
              <div>
-                <b><Button bsStyle="success" bsSize="large"> Select from one of the {search.typeoflocation}</Button></b><br /><br />
+                <b><Button bsStyle="success" size="lg" bsSize="large"> Select from one of the {search.typeoflocation}</Button></b><br /><br />
              </div>
              <div>
              {search.nameoflocation.map((item, index) => (
-              <b><ListGroup><ListGroupItem bsStyle="Success"c bsSize="large" block className='indent' onClick={(e) => this.getComponentBridges(e,{item})} key={index}> <center>{item}</center> </ListGroupItem></ListGroup></b>
+              <b><ListGroup><ListGroupItem size="lg" bsStyle="info"c bsSize="large" block className='indent' onClick={(e) => this.getComponentBridges(e,{item})} key={index}> <center>{item}</center> </ListGroupItem></ListGroup></b>
              ))}
 
              </div>

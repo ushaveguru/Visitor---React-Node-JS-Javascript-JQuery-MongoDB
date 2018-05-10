@@ -36,7 +36,7 @@ componentDidMount(){
                 backgroundPosition:'center',
                 backgroundAttachment:'fixed',
                 overflow:'scroll',
-                opacity:'0.7'
+                opacity:'0.9'
               };
 
 

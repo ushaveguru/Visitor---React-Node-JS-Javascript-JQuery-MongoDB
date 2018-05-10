@@ -29,7 +29,7 @@ import Bridges from './Bridges';
 import Waterfalls from './Waterfalls';
 import Beaches from './Beaches';
 import AmusementParks from './AmusementParks';
-import WaterfallsReview from './WaterfallsReview';
+import WaterfallsReview1 from './WaterfallsReview1';
 import NationalParks from './NationalParks';
 import Lakes from './Lakes';
 import Zoos from './Zoos';
@@ -184,7 +184,7 @@ class Main extends React.Component {
                 <Route path = "/Waterfalls" component={Waterfalls}/>
                 <Route path = "/Beaches" component={Beaches}/>
                 <Route path = "/AmusementParks" component={AmusementParks}/>
-                <Route path = "/WaterfallsReview" component={WaterfallsReview}/>
+                <Route path = "/WaterfallsReview1" component={WaterfallsReview1}/>
                 <Route path = "/Lakes" component={Lakes}/>
                 <Route path = "/NationalParks" component={NationalParks}/>
                 <Route path = "/Zoos" component={Zoos}/>

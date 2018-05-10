@@ -4,7 +4,8 @@ import axios from 'axios';
 import { createHashHistory } from 'history';
 import { Link, NavLink, HashRouter, Route, withRouter, Redirect } from 'react-router-dom';
 import {Gmaps, Marker, InfoWindow, Circle} from 'react-gmaps';
-import BridgeReview from './BridgeReview';
+import BridgeReview1 from './BridgeReview1';
+import BridgeReview2 from './BridgeReview2';
 import { Jumbotron, Grid, Row, Col, Image } from 'react-bootstrap';
 import './style.css';
 import MapContainer from './MapContainer';
@@ -14,8 +15,15 @@ import { Breadcrumb, BreadcrumbItem } from 'react-bootstrap';
 
 
 class BixbyBridge extends React.Component {
-  getComponentBridges(e,value) {
-    history.push('/BridgeReview');
+  getComponentBridges1(e,value) {
+    history.push('/BridgeReview1');
+    $(e.target).css({
+        'background-color': '#ccc'
+    });
+  }
+
+  getComponentBridges2(e,value) {
+    history.push('/BridgeReview2');
     $(e.target).css({
         'background-color': '#ccc'
     });
@@ -102,7 +110,8 @@ class BixbyBridge extends React.Component {
                        meet modern standards requiring bridges to be 32 feet (9.8 m) wide.</h4>
                      </Col>
                      <Col xs={12} sm={4} className="person-wrapper"><br /><br />
-                          <button style={styleThree} block onClick={(e) => this.getComponentBridges(e,"BridgeReview")}>View/Add Reviews</button>
+                          <button style={styleThree} block onClick={(e) => this.getComponentBridges(e,"BridgeReview1")}>View Reviews</button><br /><br />
+                          <button style={styleThree} block onClick={(e) => this.getComponentBridges(e,"BridgeReview2")}>Add Reviews</button><br />
                      </Col>
                    </Row>
                </div>
